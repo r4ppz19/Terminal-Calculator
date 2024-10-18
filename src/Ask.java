@@ -1,3 +1,4 @@
+// src/Ask.java
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -5,67 +6,44 @@ import java.util.Scanner;
 class Ask {
     Scanner input = new Scanner(System.in);
 
-    // Ask first number and loop if it's not a number
-    double askFirstNum() {
-        double firstNum = 0;
+    // Ask number and loop if it's not a number
+    double askNumber(String prompt) {
+        double number = 0;
         boolean valid = false;
 
         while (!valid) {
-            System.out.print("First Number: ");
+            System.out.print(prompt);
             try {
-                firstNum = input.nextDouble();
+                number = input.nextDouble();
                 valid = true;
-
-            } catch(InputMismatchException e) {
+            } catch (InputMismatchException e) {
                 System.err.println(Main.BRIGHT_RED + "Please enter a number!" + Main.ANSI_RESET);
                 input.nextLine();
             }
         }
-        return firstNum;
+        return number;
     }
 
+    double askFirstNum() {
+        return askNumber("First Number: ");
+    }
 
-    // Ask second number and loop if it's not a number
     double askSecondNum() {
-        double secondNum = 0;
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.print("Second Number: ");
-            try {
-                secondNum = input.nextDouble();
-                valid = true;
-            } catch (InputMismatchException e) {
-                System.err.println(Main.BRIGHT_RED + "Please enter a number" + Main.ANSI_RESET);
-                input.nextLine();
-            }
-        }
-        return secondNum;
+        return askNumber("Second Number: ");
     }
-
 
     // Ask operator
     char askOperator() {
         System.out.print("Operator: ");
-        input.nextLine();
-        return input.nextLine().charAt(0);
+        return input.next().charAt(0);
     }
-
 
     // Return bool, true if yes
     boolean askGo() {
         System.out.print("\nTry again? ");
-        input.nextLine();
-        String ans = input.nextLine();
-
-        if (ans.equalsIgnoreCase("yes") || ans.equalsIgnoreCase("y") || ans.equalsIgnoreCase("ye") || ans.equalsIgnoreCase("ya") || ans.equalsIgnoreCase("yea")) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        String ans = input.next();
+        return ans.equalsIgnoreCase("yes") || ans.equalsIgnoreCase("y") || ans.equalsIgnoreCase("ye") || ans.equalsIgnoreCase("ya") || ans.equalsIgnoreCase("yea");
     }
-
 
     // Clear terminal method
     static void clearConsole() {
@@ -79,5 +57,4 @@ class Ask {
             System.err.println("Error clearing the console: " + e.getMessage());
         }
     }
-
 }

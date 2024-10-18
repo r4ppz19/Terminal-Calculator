@@ -1,3 +1,4 @@
+// src/Calculator.java
 class Calculator {
 
     // Arithmetic calculator
@@ -9,29 +10,21 @@ class Calculator {
             case '-' -> result = firstNum - secondNum;
             case '*' -> result = firstNum * secondNum;
             case '/' -> {
-                try {
-                    if (secondNum == 0) {
-                        System.err.println(Main.BRIGHT_RED + "Can't divide by zero" + Main.ANSI_RESET);
-                    }
+                if (secondNum == 0) {
+                    System.err.println(Main.BRIGHT_RED + "Can't divide by zero" + Main.ANSI_RESET);
+                } else {
                     result = firstNum / secondNum;
-                } catch (ArithmeticException e) {
-                    System.err.println(Main.BRIGHT_RED + e.getMessage() + Main.ANSI_RESET);
                 }
             }
             case '%' -> {
-                try {
-                    if (secondNum == 0) {
-                        System.err.println(Main.BRIGHT_RED + "Can't divide by zero" + Main.ANSI_RESET);
-                    }
+                if (secondNum == 0) {
+                    System.err.println(Main.BRIGHT_RED + "Can't divide by zero" + Main.ANSI_RESET);
+                } else {
                     result = firstNum % secondNum;
-                } catch (ArithmeticException e) {
-                    System.err.println(Main.BRIGHT_RED + e.getMessage() + Main.ANSI_RESET);
                 }
             }
-            default -> System.err.println(Main.BRIGHT_RED + "\n" +"Incorrect operator." + Main.ANSI_RESET);
+            default -> System.err.println(Main.BRIGHT_RED + "\n" + "Incorrect operator." + Main.ANSI_RESET);
         }
         return result;
     }
-
-
 }
