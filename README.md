@@ -28,9 +28,3 @@ A simple terminal-based arithmetic calculator written in Java. This application 
     ```bash
     java src/Main
     ```
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Author
-Developed by r4ppz.
