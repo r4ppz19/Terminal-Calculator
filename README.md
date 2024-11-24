@@ -26,5 +26,5 @@ A simple terminal-based arithmetic calculator written in Java. This application 
 
 4. Run the application:
     ```bash
-    java src/Main
+    java -cp src Main
     ```
