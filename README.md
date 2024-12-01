@@ -14,17 +14,6 @@ A simple terminal-based arithmetic calculator written in Java. This application 
     git clone https://github.com/r4ppz19/Terminal-Calculator.git
     ```
 
-2. Navigate to the project directory:
-    ```bash
-    cd Terminal-Calculator
-    ```
+2. Open the cloned folder in your IDE.
 
-3. Compile the Java files:
-    ```bash
-    javac src/*.java
-    ```
-
-4. Run the application:
-    ```bash
-    java -cp src Main
-    ```
+3. Navigate to the `Main` class and run the `main` method.
