@@ -6,7 +6,7 @@ A simple terminal-based arithmetic calculator written in Java. This application 
 ## Features
 - Addition, subtraction, multiplication, and division operations
 - Input validation for numbers and operators
-- Clear console functionality for better readability (works only in Windows terminal; does not function in IDE terminals)
+- Clear console functionality for better readability (works only on external terminal)
 
 ## Usage
 1. Clone the repository:
